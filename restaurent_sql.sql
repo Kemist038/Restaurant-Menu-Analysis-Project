@@ -166,3 +166,28 @@ SELECT
 FROM
 	order_details
 GROUP BY Month_Name;
+
+# Gross Income made by Restaurent
+SELECT 
+	(CASE 
+		WHEN odetail.ORDER_Date BETWEEN "2023-01-01" AND "2023-01-31" THEN "Januray_23"
+        WHEN odetail.ORDER_Date BETWEEN "2023-02-01" AND "2023-02-28" THEN "February_23"
+        WHEN odetail.ORDER_Date BETWEEN "2023-03-01" AND "2023-03-31" THEN "March_23"
+        ELSE "Not_Written"
+        END) AS Month_and_Year,
+        SUM(mitems.price) AS Gross_income
+FROM 
+	Order_details AS odetail
+INNER JOIN
+	menu_items AS mitems ON mitems.menu_item_id = odetail.item_id
+GROUP BY Month_and_Year;
+
+# Total Income shown by items.
+SELECT 
+	odetail.Item_id, mitems.Item_Name, SUM(mitems.Price) AS Income_Through_Item
+FROM 
+	Order_details AS odetail
+INNER JOIN
+	menu_items AS mitems ON mitems.menu_item_id = odetail.item_id
+GROUP BY odetail.Item_id
+ORDER BY Income_Through_Item DESC;
