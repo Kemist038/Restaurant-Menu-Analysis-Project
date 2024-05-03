@@ -25,13 +25,13 @@ This project utilizes a database with two main tables:
 
 The primary objective of this project is to analyze the restaurant's menu and order data to make data-driven decisions regarding inventory management and marketing strategies. By analyzing the frequency of orders for each menu item, identifying popular categories, and correlating them with order dates and times, the project aims to achieve the following goals:
 
-1. **Inventory Management:**
+
    - Determine which items should be kept in stock to meet customer demand.
    - Identify seasonal trends or time-specific demand for certain items.
+   - Gross income by months.
+   - Items sold and earned income by them.
 
-2. **Revenue Optimization:**
-   - Identify high-margin items or categories for upselling or promotion.
-   - Recommend marketing strategies to increase sales and revenue.
+
 
 #### Usage
 
